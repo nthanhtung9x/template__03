@@ -1,0 +1,408 @@
+/* Header */
+
+.header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 28rem;
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 0 12px;
+}
+
+.header__heading {
+    font-size: 3rem;
+    padding: 32px 12px;
+    letter-spacing: 4px;
+}
+
+.header__list:last-of-type {
+    margin-top:24px;
+}
+
+.header__link {
+    display:block;
+    padding: 12px;
+    font-size: 2rem;
+    color:#757575;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+
+.header__link:hover {
+    background:#ccc;
+    color:#000;
+}
+
+.header__icon {
+    padding-left: 4px;
+}
+
+.list__child {
+    padding: 0 12px;
+    margin:0;
+    display:none;
+}
+
+.link__child {
+    font-size: 1.6rem;
+}
+
+.icon__child {
+    padding-right: 4px;
+}
+
+#show:checked ~ .list__child {
+    display:block;
+}
+
+/* Mobile menu */
+
+.menu__wrapper {
+    position: fixed;
+    background: #fff;
+    color: #000;
+    left: 0;
+    top: 0;
+    width: 0%;
+    opacity: 0;
+    z-index: 2;
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all linear 0.2s;
+}
+
+.menu__icon {
+    font-size: 4rem;
+}
+
+#collapse:checked ~ .menu__wrapper {
+    width: 70%;
+    opacity: 1;
+}
+
+.bg__collapse {
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    display:none;
+}
+
+#collapse:checked ~ .bg__collapse {
+    display:block;
+}
+
+#show__mobile:checked ~ .list__child {
+    display:block;
+}
+
+.active {
+   background: #eee;
+}
+/* Main - control */
+
+.main {
+    padding:0 12px;
+}
+
+.main__control {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    font-size: 2.4rem;
+    position: relative;
+}
+
+.control__name {
+    width: 50%;
+}
+
+.control__btn {
+    width: 50%;
+    text-align: right;
+}
+
+.search__icon {
+    cursor: pointer;
+}
+
+.search__wrapper {
+    position: absolute;
+    left:0;
+    right: 0;
+    top: calc(100% + 12px);
+    background-color: #fff;
+    z-index: 1;
+    display: flex;
+    box-shadow: 0 1px 1px 1px grey;
+    height: 0;
+    opacity: 0;
+    transition: all linear 0.2s;
+    visibility: hidden;
+}
+
+#search:checked ~ .search__wrapper {
+    height: 48px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.search__input {
+    width: 100%;
+    padding-right: 48px;
+    outline: 0;
+}
+
+.search__link {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display:inline-block;
+}
+
+/* Images */
+
+.main__img {
+    background: url('https://www.w3schools.com/w3images/jeans.jpg') no-repeat center;
+    background-size: cover;
+    height: 60rem;
+    margin: 24px 0;
+}
+
+.main__wrapper {
+    padding:60px 30px;
+}
+
+.main__img__heading {
+    font-size: 6rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.main__img__text {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.main__img__link {
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 12px 24px;
+    background: #000;
+    display: inline-block;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.main__img__link:hover {
+    background: #eee;
+    color: #000;
+}
+
+
+/*  product */
+
+.category {
+    font-size: 2.4rem;
+    color:#aaa;
+    margin-bottom: 24px;
+}
+
+.product {
+    display:flex;
+    flex-direction: column;
+    height: 32rem;
+    position: relative;
+    margin: 6px;
+}
+
+.product__img {
+    height: 80%;
+}
+
+.product__img > img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(50%);
+}
+
+.product__info {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.product__name {
+    font-size: 1.6rem;
+}
+
+.product__price {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.product__special {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 4px 12px;
+    background: #000;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.product__link {
+    position: absolute;
+    z-index: 1;
+    top: 35%;
+    left: 25%;
+    display: none;
+    padding: 6px 12px;
+    background: #000;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.product__img:hover ~ .product__link {
+    display: block;
+}
+
+.product__link:hover {
+    background: #eee;
+    color:#000;
+    display: block;
+}
+
+/* Contact */
+
+.main__contact {
+    background: #000;
+    color: #fff;
+    padding: 32px 12px;
+}
+
+.contact__heading {
+    font-size: 4rem;
+}
+
+.contact__text {
+    font-size: 1.8rem;
+    margin:12px 0;
+}
+
+.contact__input {
+    width: 96%;
+    padding: 12px;
+}
+
+.contact__link {
+    background: #f44336;
+    padding: 8px 12px;
+    color: #fff;
+    display:inline-block;
+    font-size: 2rem;
+    margin-top: 12px;
+}
+
+.contact__link:hover {
+    background: #eee;
+    color: #000;
+}
+
+
+/* Footer */
+
+.footer {
+    background: #eee;
+    padding: 24px 0px;
+}
+
+.footer__contact {
+    padding: 0 12px;
+    text-align: center;
+}
+
+.footer__heading {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.footer__contact__text {
+    font-size: 1.6rem;
+    margin: 12px 0;
+    font-weight: 300;
+}
+
+.footer__contact__input {
+    width: 90%;
+    padding: 8px;
+    margin: 6px 0;
+}
+
+.footer__contact__btn {
+    display: block;
+    padding: 12px 0;
+    background: #000;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.footer__contact__btn:hover {
+    background: #aaa;
+    color: #000;
+}
+
+.footer__about {
+    text-align: center;
+}
+
+.about__item {
+    padding: 8px 0;
+}
+
+.about__link {
+    font-size: 1.6rem;
+    color: #000;
+    text-decoration: underline;
+    font-weight: 300;
+}
+
+.footer__info {
+    text-align: center;
+}
+
+.footer__info__text {
+    font-size: 1.6rem;
+    padding: 8px 0;
+    font-weight: 300;
+}
+
+.footer__icon {
+    font-size: 2.4rem;
+}
+
+.f__copy {
+    text-align: center;
+    padding: 24px 0;
+    background: #000;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.f__copy > span {
+    text-decoration: underline;
+}
